@@ -6,3 +6,14 @@ const consoleExporter = new ConsoleSpanExporter();
 const spanProcessor = new SimpleSpanProcessor(consoleExporter);
 provider.addSpanProcessor(spanProcessor);
 provider.register()
+
+
+const { ZipkinExporter } = require("@opentelemetry/exporter-zipkin");
+
+const zipkinExporter = new ZipkinExporter({
+  url: 'http://localhost:9411/api/v2/spans',
+  serviceName: 'sre-conf-demo1'
+})
+
+const zipkinProcessor = new SimpleSpanProcessor(zipkinExporter)
+provider.addSpanProcessor(zipkinProcessor)
