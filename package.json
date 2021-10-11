@@ -18,6 +18,7 @@
   "homepage": "https://github.com/itsayushs/SREConf-IBM2021#readme",
   "dependencies": {
     "@opentelemetry/core": "^0.16.0",
+    "@opentelemetry/exporter-jaeger": "^0.16.0",
     "@opentelemetry/exporter-zipkin": "^0.16.0",
     "@opentelemetry/node": "^0.16.0",
     "@opentelemetry/plugin-express": "^0.13.0",

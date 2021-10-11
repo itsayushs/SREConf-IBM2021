@@ -17,3 +17,8 @@ const zipkinExporter = new ZipkinExporter({
 
 const zipkinProcessor = new SimpleSpanProcessor(zipkinExporter)
 provider.addSpanProcessor(zipkinProcessor)
+
+const { JaegerExporter } = require("@opentelemetry/exporter-jaeger");
+const { BatchSpanProcessor } = require("@opentelemetry/tracing");
+
+provider.addSpanProcessor(new BatchSpanProcessor(new JaegerExporter()))
